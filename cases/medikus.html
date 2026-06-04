@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="ru"><head>
+
+
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SA Group — Кейс Team24.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070d;--s1:#0c1220;--s2:#111a2e;--ln:rgba(255,255,255,.06);--ln2:rgba(255,255,255,.12);--tx:#e7ecf5;--dm:#8b95a8;--mt:#5b6377;--ac:#4aa8ff;--ac2:#1d7dff;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background:radial-gradient(1100px 600px at 50% -180px,rgba(74,168,255,.16),transparent 60%),radial-gradient(700px 500px at 90% 5%,rgba(29,125,255,.07),transparent 70%),var(--bg);}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1000px;margin:0 auto;padding:0 28px;}
+.tg{background:linear-gradient(160deg,#fff 0%,#b4c3dc 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.ag{background:linear-gradient(160deg,#7bc4ff 0%,var(--ac2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:700;font-size:14px;transition:all .15s;border:0;cursor:pointer;}
+.btn-p{background:linear-gradient(180deg,var(--ac),var(--ac2));color:#04111f;box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 -8px 22px rgba(29,125,255,.35) inset,0 10px 28px -10px rgba(29,125,255,.7);}
+.btn-p:hover{transform:translateY(-1px);filter:brightness(1.07);}
+.btn-g{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);color:var(--tx);}
+.btn-g:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2);}
+.hdr{position:sticky;top:0;z-index:100;backdrop-filter:saturate(150%) blur(16px);background:rgba(5,7,13,.7);border-bottom:1px solid var(--ln);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:13px 0;max-width:1000px;margin:0 auto;padding-left:28px;padding-right:28px;}
+.nav img{height:32px;width:auto;filter:brightness(0) invert(1);}
+.back{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--dm);transition:color .15s;}
+.back:hover{color:var(--tx);}
+.back svg{transition:transform .2s;}
+.back:hover svg{transform:translateX(-3px);}
+.hero{padding:60px 0 44px;}
+.crumb{font-size:13px;color:var(--mt);margin-bottom:18px;}
+.crumb a{color:var(--ac);}
+.badge{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:999px;background:rgba(74,168,255,.08);border:1px solid rgba(74,168,255,.22);color:var(--ac);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;}
+h1{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:46px;line-height:1.06;letter-spacing:-.03em;margin-bottom:16px;}
+.lede{font-size:18px;line-height:1.6;color:var(--dm);max-width:680px;}
+.hero-metrics{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+.hm{flex:1;min-width:150px;padding:20px;border-radius:16px;background:linear-gradient(180deg,rgba(74,168,255,.06),rgba(74,168,255,.01));border:1px solid rgba(74,168,255,.18);}
+.hm .v{font-family:'Space Grotesk';font-weight:800;font-size:34px;letter-spacing:-.02em;}
+.hm .l{font-size:13px;color:var(--dm);margin-top:4px;}
+.banner{margin:8px 0 0;aspect-ratio:21/7;border-radius:20px;background:linear-gradient(135deg,rgba(74,168,255,.2),rgba(29,125,255,.05));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border:1px solid var(--ln);}
+.banner .bigstat{font-family:'Space Grotesk';font-weight:800;font-size:96px;letter-spacing:-.04em;}
+.banner .tag{position:absolute;top:16px;left:16px;padding:5px 12px;border-radius:7px;background:rgba(5,7,13,.7);border:1px solid var(--ln);font-size:12px;color:var(--dm);}
+.sec{padding:48px 0;border-top:1px solid var(--ln);}
+.sec h2{font-family:'Space Grotesk';font-weight:700;font-size:26px;letter-spacing:-.02em;margin-bottom:16px;}
+.sec p{font-size:15.5px;line-height:1.7;color:var(--dm);max-width:720px;margin-bottom:14px;}
+.sec ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:8px;}
+.sec li{display:flex;align-items:flex-start;gap:11px;font-size:15px;color:var(--tx);line-height:1.55;}
+.sec li .ck{width:24px;height:24px;flex-shrink:0;border-radius:7px;background:rgba(34,224,122,.1);border:1px solid rgba(34,224,122,.2);color:#22e07a;display:flex;align-items:center;justify-content:center;}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+.prob-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:18px;padding:0;}
+.prob-list li{display:flex;align-items:flex-start;gap:15px;padding:18px 20px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,.005));border:1px solid var(--ln);border-left:3px solid #e0a23a;}
+.prob-list .pm{width:26px;height:26px;flex-shrink:0;border-radius:8px;background:rgba(224,162,58,.12);border:1px solid rgba(224,162,58,.28);color:#e0a23a;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.prob-list .pc-b{font-weight:700;color:var(--tx);}
+.prob-list p{font-size:14.5px;line-height:1.6;color:var(--dm);margin:0;max-width:760px;}
+.task-list{list-style:none;counter-reset:tk;display:flex;flex-direction:column;gap:12px;margin-top:18px;padding:0;}
+.task-list li{counter-increment:tk;display:flex;align-items:flex-start;gap:16px;padding:18px 22px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));border:1px solid var(--ln);transition:border-color .2s,transform .2s;}
+.task-list li:hover{border-color:rgba(74,168,255,.28);transform:translateY(-2px);}
+.task-list li::before{content:counter(tk);flex-shrink:0;width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:800;font-size:16px;background:rgba(74,168,255,.1);border:1px solid rgba(74,168,255,.24);color:var(--ac);margin-top:1px;}
+.task-list p{font-size:15px;line-height:1.6;color:var(--tx);margin:0;max-width:760px;align-self:center;}
+.impl-list{list-style:none;counter-reset:im;display:flex;flex-direction:column;gap:14px;margin-top:20px;padding:0;}
+.impl-list>li{counter-increment:im;display:flex;align-items:flex-start;gap:16px;padding:22px 24px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,.006));border:1px solid var(--ln);transition:border-color .2s,transform .2s;}
+.impl-list>li:hover{border-color:rgba(74,168,255,.28);transform:translateY(-2px);}
+.impl-list>li::before{content:counter(im);flex-shrink:0;width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:800;font-size:17px;background:rgba(74,168,255,.1);border:1px solid rgba(74,168,255,.24);color:var(--ac);margin-top:1px;}
+.impl-list .ic h4{font-family:'Space Grotesk';font-weight:700;font-size:16.5px;color:var(--tx);margin:0 0 6px;letter-spacing:-.01em;}
+.impl-list .ic p{font-size:14.5px;line-height:1.62;color:var(--dm);margin:0;max-width:720px;}
+.impl-list .sub{list-style:none;display:flex;flex-direction:column;gap:7px;margin:12px 0 0;padding:0;}
+.impl-list .sub li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--tx);line-height:1.5;}
+.impl-list .sub li::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--ac);margin-top:8px;}
+.tool{padding:6px 13px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid var(--ln);font-size:13px;color:var(--dm);font-weight:600;}
+.quote{padding:28px 32px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));border:1px solid var(--ln);border-left:3px solid var(--ac);margin-top:8px;}
+.quote p{font-size:17px;line-height:1.6;color:var(--tx);margin-bottom:16px;font-style:italic;}
+.quote .who{display:flex;align-items:center;gap:12px;}
+.quote .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Space Grotesk';color:#fff;}
+.quote .nm{font-weight:700;font-size:14.5px;}.quote .ps{font-size:12.5px;color:var(--mt);}
+.cta{margin:48px 0;padding:54px 40px;text-align:center;border-radius:24px;background:linear-gradient(180deg,rgba(74,168,255,.07),rgba(29,125,255,.02));border:1px solid rgba(74,168,255,.18);position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;top:-50%;left:50%;width:500px;height:500px;background:radial-gradient(circle,rgba(74,168,255,.18),transparent 60%);transform:translateX(-50%);pointer-events:none;}
+.cta>*{position:relative;}
+.cta h2{font-family:'Space Grotesk';font-weight:800;font-size:32px;letter-spacing:-.02em;margin-bottom:12px;}
+.cta p{font-size:16px;color:var(--dm);margin-bottom:24px;}
+.nextcase{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 28px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));border:1px solid var(--ln);margin-bottom:48px;transition:border-color .2s,transform .2s;}
+.nextcase:hover{border-color:rgba(74,168,255,.3);transform:translateY(-2px);}
+.nextcase .nl{font-size:12px;color:var(--mt);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
+.nextcase .nt{font-family:'Space Grotesk';font-weight:700;font-size:19px;}
+.ftr{padding:32px 0;border-top:1px solid var(--ln);text-align:center;font-size:13px;color:var(--mt);}
+@media(max-width:680px){h1{font-size:32px;}.banner .bigstat{font-size:56px;}.hero-metrics{flex-direction:column;}.cta{padding:36px 22px;}.cta h2{font-size:24px;}}
+</style>
+</head>
+<body style="">
+<header class="hdr">
+  <nav class="nav">
+    <a href="../Team24 v3.html"><img src="https://static.tildacdn.one/tild3233-6631-4135-a233-396561653863/Logo_version-1-01.svg" alt="Team24.uz"></a>
+    <a href="../Team24 v3.html#cases" class="back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg> Все кейсы</a>
+  </nav>
+</header>
+
+<section class="hero"><div class="container">
+  <div class="crumb"><a href="../Team24 v3.html">Главная</a> / <a href="../Team24 v3.html#cases">Кейсы</a> / SA Group</div>
+  <div class="badge">Услуги · Медицина</div>
+  <h1><span class="tg">SA Group</span><br><span class="ag">разгрузили администраторов</span></h1>
+  <p class="lede">Официальный дилер Porsche. Индивидуальная конфигурация и профессиональное обслуживание. Porsche Студия – первый шоурум Porsche в Узбекистане, расположенный в сердце Ташкента.<br>Более 1 000 000 посещений за последний месяц</p>
+</div></section>
+
+<section class="container"><div class="banner" style="padding:0;"><image-slot id="porsche-banner" src="porsche-banner.png" style="position:absolute;inset:0;width:100%;height:100%" shape="rect" fit="cover" placeholder="Перетащите фото сюда"></image-slot><span class="tag" style="z-index:2">Porsche Студия · Ташкент</span></div></section>
+
+<section class="sec"><div class="container">
+  <h2>Проблемы компании:</h2>
+  <ul class="prob-list">
+    <li><span class="pm" style="font-size: 15px; letter-spacing: 10px; margin: 10px 0px 0px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path></svg></span><p><span class="pc-b">Неупорядоченные процессы в отделе продаж.</span> В процессе работы сотрудники компании сталкивались с отсутствием чёткой структуры и последовательности выполнения задач.</p></li>
+    <li><span class="pm" style="font-size: 15px; margin: 10px 0px 0px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path></svg></span><p><span class="pc-b">Отсутствие прозрачности.</span> Внутри отдела продаж не было единого механизма, позволяющего отслеживать этапы работы с клиентами, что создавало проблемы с управляемостью и оценкой эффективности.</p></li>
+    <li style="background-size: cover;"><span class="pm" style="margin: 10px 0px 0px; border-width: 1px; font-size: 15px; line-height: 1.55;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path></svg></span><p><span class="pc-b">Налаживание коммуникации с клиентами.</span> Отсутствовала чёткая система взаимодействия с клиентами, из-за чего часто терялись лиды, а конверсии оставались низкими.</p></li>
+  </ul>
+</div></section>
+
+<section class="sec"><div class="container">
+  <h2>Задачи, поставленные перед нами:</h2>
+  <ul class="task-list">
+    <li><p>Автоматизировать ключевые бизнес-процессы компании, начиная от обработки лидов и заканчивая доставкой продукции.</p></li>
+    <li><p>Адаптировать сотрудников компании к работе в системе Битрикс24, чтобы повысить их эффективность.</p></li>
+    <li><p>Создать понятный и доступный дашборд, который позволял бы руководству компании отслеживать выполнение задач и общую продуктивность в режиме реального времени.</p></li>
+  </ul>
+</div></section>
+
+<section class="sec"><div class="container">
+  <h2>Реализация проекта:</h2>
+  <p>Для решения поставленных задач мы начали с глубокого анализа текущего состояния системы Битрикс24 в компании SA Group. Мы изучили их бизнес-процессы, выявили слабые места и составили подробное техническое задание, включающее несколько этапов внедрения:</p>
+  <ul class="impl-list">
+    <li><div class="ic"><h4>Организация колл-центра</h4><p>Разработали и внедрили колл-центр, который стал центральной точкой обработки всех входящих лидов. Это позволило автоматизировать распределение качественных лидов между сотрудниками отдела продаж и повысить конверсию обращений в сделки.</p></div></li>
+    <li><div class="ic"><h4>Реорганизация отдела продаж</h4><p>Разделили отдел продаж на три направления, каждое из которых получило свои процессы в системе:</p><ul class="sub"><li>Работа с дилерами</li><li>Экспортные продажи</li><li>Продажи для розничных клиентов</li></ul><p style="margin-top:12px;">Для каждого направления внедрили автоматизированные сценарии работы с клиентами, включая формирование договоров, контроль выполнения задач и работу с оплатами.</p></div></li>
+    <li><div class="ic"><h4>Автоматизация задач для смежных отделов</h4><p>Финансовый и бухгалтерский отделы получили автоматизированные задачи, которые создаются в зависимости от этапов сделки. Это исключило человеческий фактор и позволило минимизировать ошибки.</p></div></li>
+    <li><div class="ic"><h4>Настройка логистики и склада</h4><p>В логистическом отделе внедрили систему задач для планирования загрузки товаров, а также связали склад с системой управления задачами, что позволило контролировать весь процесс от формирования заказа до его отгрузки.</p></div></li>
+    <li><div class="ic"><h4>Создание дашбордов</h4><p>Разработали комплексный дашборд, который объединяет данные из всех отделов. Теперь руководство компании в любой момент может отслеживать ключевые метрики: количество лидов, статус сделок, эффективность сотрудников и выполнение планов.</p></div></li>
+  </ul>
+</div></section>
+
+<section class="sec"><div class="container">
+  <h2>Результаты</h2>
+  <p>После завершения проекта компания SA Group получила полностью автоматизированную систему, которая покрывает все этапы их бизнес-процессов. Руководство отметило значительное улучшение прозрачности работы, рост эффективности сотрудников и повышение качества обслуживания клиентов.</p>
+</div></section>
+
+<section class="sec"><div class="container">
+  <div class="quote">
+    <p>«Telegram-бот с AI закрывает 70% типовых обращений сам. Администраторы наконец занимаются клиентами, а не однотипными вопросами.»</p>
+    <div class="who"><div class="av">ДК</div><div><div class="nm">Дильноза Каримова</div><div class="ps">Директор, Клиника Medikus</div></div></div>
+  </div>
+</div></section>
+
+<section class="container"><div class="cta">
+  <h2>Хотите похожий результат?</h2>
+  <p>Расскажите о задаче — пришлём план внедрения за 24 часа.</p>
+  <a href="../Team24 v3.html#contact" class="btn btn-p">Получить консультацию <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+</div></section>
+
+<section class="container">
+  <a href="uzmetal.html" class="nextcase">
+    <div>
+      <div class="nl">Следующий кейс</div>
+      <div class="nt">Porsche</div>
+    </div>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+  </a>
+</section>
+<footer class="ftr">© 2026 Team24.uz — Все права защищены.</footer>
+
+<script src="image-slot.js"></script>
+</body></html>
