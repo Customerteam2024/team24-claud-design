@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>МойСклад — контроль товаров и склада — Team24.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#05070d;--s1:#0c1220;--s2:#111a2e;--ln:rgba(255,255,255,.06);--ln2:rgba(255,255,255,.12);--tx:#e7ecf5;--dm:#8b95a8;--mt:#5b6377;--ac:#4aa8ff;--ac2:#1d7dff;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background:radial-gradient(1100px 600px at 50% -180px,rgba(74,168,255,.16),transparent 60%),radial-gradient(700px 500px at 90% 5%,rgba(29,125,255,.07),transparent 70%),var(--bg);}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1000px;margin:0 auto;padding:0 28px;}
+.tg{background:linear-gradient(160deg,#fff 0%,#b4c3dc 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.ag{background:linear-gradient(160deg,#7bc4ff 0%,var(--ac2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:700;font-size:14px;transition:all .15s;border:0;cursor:pointer;}
+.btn-p{background:linear-gradient(180deg,var(--ac),var(--ac2));color:#04111f;box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 -8px 22px rgba(29,125,255,.35) inset,0 10px 28px -10px rgba(29,125,255,.7);}
+.btn-p:hover{transform:translateY(-1px);filter:brightness(1.07);}
+.btn-g{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);color:var(--tx);}
+.btn-g:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2);}
+.hdr{position:sticky;top:0;z-index:100;backdrop-filter:saturate(150%) blur(16px);background:rgba(5,7,13,.7);border-bottom:1px solid var(--ln);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:13px 0;max-width:1000px;margin:0 auto;padding-left:28px;padding-right:28px;}
+.nav img{height:32px;width:auto;filter:brightness(0) invert(1);}
+.back{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--dm);transition:color .15s;}
+.back:hover{color:var(--tx);}
+.back svg{transition:transform .2s;}
+.back:hover svg{transform:translateX(-3px);}
+.hero{padding:60px 0 44px;}
+.crumb{font-size:13px;color:var(--mt);margin-bottom:18px;}
+.crumb a{color:var(--ac);}
+.badge{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:999px;background:rgba(74,168,255,.08);border:1px solid rgba(74,168,255,.22);color:var(--ac);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;}
+h1{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:46px;line-height:1.06;letter-spacing:-.03em;margin-bottom:16px;}
+.lede{font-size:18px;line-height:1.6;color:var(--dm);max-width:680px;}
+.hero-metrics{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+.hm{flex:1;min-width:150px;padding:20px;border-radius:16px;background:linear-gradient(180deg,rgba(74,168,255,.06),rgba(74,168,255,.01));border:1px solid rgba(74,168,255,.18);}
+.hm .v{font-family:'Space Grotesk';font-weight:800;font-size:34px;letter-spacing:-.02em;}
+.hm .l{font-size:13px;color:var(--dm);margin-top:4px;}
+.banner{margin:8px 0 0;aspect-ratio:21/7;border-radius:20px;background:linear-gradient(135deg,rgba(74,168,255,.2),rgba(29,125,255,.05));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border:1px solid var(--ln);}
+.banner .bigstat{font-family:'Space Grotesk';font-weight:800;font-size:96px;letter-spacing:-.04em;}
+.banner .tag{position:absolute;top:16px;left:16px;padding:5px 12px;border-radius:7px;background:rgba(5,7,13,.7);border:1px solid var(--ln);font-size:12px;color:var(--dm);}
+.sec{padding:48px 0;border-top:1px solid var(--ln);}
+.sec h2{font-family:'Space Grotesk';font-weight:700;font-size:26px;letter-spacing:-.02em;margin-bottom:16px;}
+.sec p{font-size:15.5px;line-height:1.7;color:var(--dm);max-width:720px;margin-bottom:14px;}
+.sec ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:8px;}
+.sec li{display:flex;align-items:flex-start;gap:11px;font-size:15px;color:var(--tx);line-height:1.55;}
+.sec li .ck{width:24px;height:24px;flex-shrink:0;border-radius:7px;background:rgba(34,224,122,.1);border:1px solid rgba(34,224,122,.2);color:#22e07a;display:flex;align-items:center;justify-content:center;}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+.tool{padding:6px 13px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid var(--ln);font-size:13px;color:var(--dm);font-weight:600;}
+.quote{padding:28px 32px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));border:1px solid var(--ln);border-left:3px solid var(--ac);margin-top:8px;}
+.quote p{font-size:17px;line-height:1.6;color:var(--tx);margin-bottom:16px;font-style:italic;}
+.quote .who{display:flex;align-items:center;gap:12px;}
+.quote .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Space Grotesk';color:#fff;}
+.quote .nm{font-weight:700;font-size:14.5px;}.quote .ps{font-size:12.5px;color:var(--mt);}
+.cta{margin:48px 0;padding:54px 40px;text-align:center;border-radius:24px;background:linear-gradient(180deg,rgba(74,168,255,.07),rgba(29,125,255,.02));border:1px solid rgba(74,168,255,.18);position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;top:-50%;left:50%;width:500px;height:500px;background:radial-gradient(circle,rgba(74,168,255,.18),transparent 60%);transform:translateX(-50%);pointer-events:none;}
+.cta>*{position:relative;}
+.cta h2{font-family:'Space Grotesk';font-weight:800;font-size:32px;letter-spacing:-.02em;margin-bottom:12px;}
+.cta p{font-size:16px;color:var(--dm);margin-bottom:24px;}
+.nextcase{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 28px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));border:1px solid var(--ln);margin-bottom:48px;transition:border-color .2s,transform .2s;}
+.nextcase:hover{border-color:rgba(74,168,255,.3);transform:translateY(-2px);}
+.nextcase .nl{font-size:12px;color:var(--mt);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
+.nextcase .nt{font-family:'Space Grotesk';font-weight:700;font-size:19px;}
+.ftr{padding:32px 0;border-top:1px solid var(--ln);text-align:center;font-size:13px;color:var(--mt);}
+@media(max-width:680px){h1{font-size:32px;}.banner .bigstat{font-size:56px;}.hero-metrics{flex-direction:column;}.cta{padding:36px 22px;}.cta h2{font-size:24px;}}
+</style>
+
+<style>
+.fgrid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px;}
+.fbox{padding:22px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,.006));border:1px solid var(--ln);transition:border-color .2s,transform .2s;}
+.fbox:hover{border-color:rgba(74,168,255,.28);transform:translateY(-2px);}
+.fbox .fi{width:40px;height:40px;border-radius:11px;background:rgba(74,168,255,.08);border:1px solid rgba(74,168,255,.2);color:var(--ac);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.fbox .fi svg{width:21px;height:21px;}
+.fbox h4{font-family:'Space Grotesk';font-weight:700;font-size:16px;margin-bottom:7px;}
+.fbox p{font-size:14px;color:var(--dm);line-height:1.55;margin:0;}
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:0;margin-top:10px;}
+.step{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--ln);}
+.step:last-child{border-bottom:0;}
+.step .num{counter-increment:s;flex-shrink:0;width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:800;font-size:17px;background:rgba(74,168,255,.08);border:1px solid rgba(74,168,255,.22);color:var(--ac);}
+.step .num::before{content:counter(s);}
+.step .sct h4{font-family:'Space Grotesk';font-weight:700;font-size:16.5px;margin-bottom:5px;}
+.step .sct p{font-size:14.5px;color:var(--dm);line-height:1.6;margin:0;max-width:660px;}
+@media(max-width:680px){.fgrid2{grid-template-columns:1fr;}}
+</style>
+<style>
+/* ── Pricing ─────────────────────────────────── */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:16px;align-items:start;}
+.pcard{position:relative;display:flex;flex-direction:column;border-radius:20px;padding:28px 24px;transition:transform .25s,border-color .2s,box-shadow .3s,background .3s;}
+.pc-tag{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;padding:4px 11px;border-radius:7px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:rgba(74,168,255,.1);border:1px solid rgba(74,168,255,.24);color:var(--ac);margin-bottom:18px;}
+.pc-name{font-family:'Space Grotesk';font-weight:800;font-size:23px;letter-spacing:-.02em;margin-bottom:8px;}
+.pc-price{font-family:'Space Grotesk';font-weight:800;font-size:29px;letter-spacing:-.02em;margin-bottom:14px;line-height:1.05;}
+.pc-price span{font-size:15px;font-weight:600;color:var(--dm);}
+.pc-desc{font-size:14px;color:var(--dm);line-height:1.55;margin-bottom:22px;}
+.pc-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin:0 0 26px;padding:0;}
+.pc-list li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.5;color:var(--tx);}
+.pc-list li .pk{width:20px;height:20px;flex-shrink:0;border-radius:6px;background:rgba(74,168,255,.1);border:1px solid rgba(74,168,255,.22);color:var(--ac);display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.pc-cta{margin-top:auto;}
+.pc-cta .btn{width:100%;justify-content:center;}
+.pc-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:5px 14px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;background:linear-gradient(180deg,var(--ac),var(--ac2));color:#04111f;box-shadow:0 6px 18px -6px rgba(29,125,255,.7);white-space:nowrap;}
+
+/* GLASS (default) */
+.price-grid[data-cards="glass"] .pcard{background:linear-gradient(180deg,rgba(255,255,255,.032),rgba(255,255,255,.006));border:1px solid var(--ln);}
+.price-grid[data-cards="glass"] .pcard:hover{border-color:rgba(74,168,255,.3);transform:translateY(-4px);}
+.price-grid[data-cards="glass"] .pcard.feat{border-color:rgba(74,168,255,.42);background:linear-gradient(180deg,rgba(74,168,255,.1),rgba(29,125,255,.02));box-shadow:0 0 0 1px rgba(74,168,255,.18),0 30px 70px -28px rgba(29,125,255,.5),0 0 60px -22px rgba(74,168,255,.4);}
+.price-grid[data-cards="glass"] .pc-price{background:linear-gradient(160deg,#fff,#b4c3dc);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.price-grid[data-cards="glass"] .pcard.feat .pc-price{background:linear-gradient(160deg,#7bc4ff,var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+/* OUTLINE */
+.price-grid[data-cards="outline"] .pcard{background:transparent;border:1px solid var(--ln2);overflow:hidden;}
+.price-grid[data-cards="outline"] .pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:rgba(255,255,255,.12);}
+.price-grid[data-cards="outline"] .pcard.feat::before{background:linear-gradient(90deg,var(--ac),var(--ac2));}
+.price-grid[data-cards="outline"] .pcard:hover{border-color:rgba(74,168,255,.4);transform:translateY(-4px);}
+.price-grid[data-cards="outline"] .pcard.feat{background:rgba(74,168,255,.035);}
+.price-grid[data-cards="outline"] .pc-price{color:var(--tx);}
+.price-grid[data-cards="outline"] .pcard.feat .pc-price{color:var(--ac);}
+
+/* SPOTLIGHT */
+.price-grid[data-cards="spotlight"] .pcard{background:linear-gradient(180deg,#0c1426,#070d1a);border:1px solid var(--ln);box-shadow:0 30px 60px -30px rgba(0,0,0,.85);}
+.price-grid[data-cards="spotlight"] .pcard:hover{transform:translateY(-4px);}
+.price-grid[data-cards="spotlight"] .pcard.feat{background:linear-gradient(165deg,var(--ac),var(--ac2));border-color:transparent;box-shadow:0 36px 80px -28px rgba(29,125,255,.75);transform:scale(1.035);}
+.price-grid[data-cards="spotlight"] .pcard.feat .pc-name,.price-grid[data-cards="spotlight"] .pcard.feat .pc-price{color:#04111f;}
+.price-grid[data-cards="spotlight"] .pcard.feat .pc-tag{background:rgba(4,17,31,.16);border-color:rgba(4,17,31,.25);color:#04111f;}
+.price-grid[data-cards="spotlight"] .pcard.feat .pc-desc{color:rgba(4,17,31,.72);}
+.price-grid[data-cards="spotlight"] .pcard.feat .pc-list li{color:#04111f;}
+.price-grid[data-cards="spotlight"] .pcard.feat .pc-list li .pk{background:rgba(4,17,31,.16);border-color:rgba(4,17,31,.28);color:#04111f;}
+.price-grid[data-cards="spotlight"] .pcard.feat .pc-badge{background:#04111f;color:#fff;}
+.price-grid[data-cards="spotlight"] .pcard.feat .btn-p{background:#04111f;color:#fff;box-shadow:none;}
+.price-grid[data-cards="spotlight"] .pcard.feat .btn-p:hover{filter:brightness(1.25);}
+
+.price-note{font-size:13px;color:var(--mt);margin-top:18px;}
+@media(max-width:880px){.price-grid{grid-template-columns:1fr;max-width:440px;margin-left:auto;margin-right:auto;}.price-grid .pcard.feat{transform:none!important;}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <nav class="nav">
+    <a href="../Team24 v3.html"><img src="https://static.tildacdn.one/tild3233-6631-4135-a233-396561653863/Logo_version-1-01.svg" alt="Team24.uz"/></a>
+    <a href="../Team24 v3.html#svc-intro" class="back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Все услуги</a>
+  </nav>
+</header>
+
+<section class="hero"><div class="container">
+  <div class="crumb"><a href="../Team24 v3.html">Главная</a> / <a href="../Team24 v3.html#svc-intro">Услуги</a> / МойСклад</div>
+  <div class="badge">Складской учёт</div>
+  <h1><span class="tg">Полный контроль</span><br/><span class="ag">товаров и склада</span></h1>
+  <p class="lede">Неточные остатки и хаос на складе — это потерянные деньги и недовольные клиенты. Мы внедряем МойСклад и связываем его с CRM: остатки актуальны в реальном времени, а заказы оформляются без ошибок.</p>
+  <div class="hero-metrics"><div class="hm"><div class="v ag">−60%</div><div class="l">ошибки в учёте</div></div><div class="hm"><div class="v ag">100%</div><div class="l">точность остатков</div></div><div class="hm"><div class="v ag">∞</div><div class="l">складов в системе</div></div></div>
+  <div style="margin-top:28px;"><a href="../Team24 v3.html#contact" class="btn btn-p">Получить расчёт <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+</div></section>
+
+<section class="container"><div class="banner"><span class="tag">Складской учёт</span><span class="bigstat ag">−60%</span></div></section>
+
+<section class="sec"><div class="container">
+  <h2>Зачем это нужно</h2>
+  <p>Остатки в Excel не сходятся с реальностью, менеджер обещает клиенту товар, которого нет, а дефицит обнаруживается уже на этапе отгрузки. Ручной учёт съедает время и постоянно даёт сбои.</p>
+</div></section>
+
+<section class="sec"><div class="container">
+  <h2>Что входит</h2>
+  <div class="fgrid2"><div class="fbox"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8"/></svg></div><h4>Учёт в реальном времени</h4><p>Остатки, приходы, списания — всегда актуально без Excel.</p></div><div class="fbox"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg></div><h4>Интеграция с CRM</h4><p>Менеджер видит наличие товара прямо в карточке сделки.</p></div><div class="fbox"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z"/></svg></div><h4>Автозаказы</h4><p>Система сама сообщает, когда запас заканчивается. Не пропустите дефицит.</p></div><div class="fbox"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="7" rx="1"/><rect x="12" y="7" width="3" height="11" rx="1"/><rect x="17" y="14" width="3" height="4" rx="1"/></svg></div><h4>Аналитика</h4><p>Что продаётся, что залёживается — видно в одном дашборде.</p></div><div class="fbox"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8L2 7h20l-6-4z"/></svg></div><h4>Несколько складов</h4><p>Управляете сетью магазинов — всё в одном окне, без путаницы.</p></div></div>
+  <div class="tools" style="margin-top:22px;"><span class="tool">МойСклад</span><span class="tool">Bitrix24</span><span class="tool">1С</span><span class="tool">Сканер штрихкодов</span><span class="tool">Маркетплейсы</span></div>
+</div></section>
+
+<section class="sec" id="pricing"><div class="container">
+  <h2>Тарифы внедрения</h2>
+  <p>Выберите формат под объём склада и количество точек. Цены фиксированные — без скрытых платежей.</p>
+  <div class="price-grid" id="price-grid" data-cards="glass">
+
+    <div class="pcard">
+      <span class="pc-tag">Пакетное внедрение</span>
+      <div class="pc-name">Склад Basic</div>
+      <div class="pc-price">4 200 000 <span>сум</span></div>
+      <p class="pc-desc">Учёт остатков и товаров для одной точки.</p>
+      <ul class="pc-list">
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Настройка номенклатуры и остатков</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Приходы, отгрузки и списания</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Печать документов и ценников</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Один склад / одна точка</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>1 час группового обучения</li>
+      </ul>
+      <div class="pc-cta"><a href="../Team24 v3.html#contact" class="btn btn-g">Внедрить Basic</a></div>
+    </div>
+
+    <div class="pcard feat">
+      <span class="pc-badge">Популярный</span>
+      <span class="pc-tag">Пакетное внедрение</span>
+      <div class="pc-name">Склад Plus</div>
+      <div class="pc-price">8 900 000 <span>сум</span></div>
+      <p class="pc-desc">Несколько складов и связка с CRM.</p>
+      <ul class="pc-list">
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Несколько складов в одном окне</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Интеграция с Bitrix24 / amoCRM</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Автозаказы при низком остатке</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Контроль себестоимости и прибыли</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>До 20 пользователей</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Dashboard базовый</li>
+      </ul>
+      <div class="pc-cta"><a href="../Team24 v3.html#contact" class="btn btn-p">Внедрить Plus</a></div>
+    </div>
+
+    <div class="pcard">
+      <span class="pc-tag">Проектное внедрение</span>
+      <div class="pc-name">Склад Pro</div>
+      <div class="pc-price">от 22 млн <span>сум</span></div>
+      <p class="pc-desc">Под сеть магазинов, ERP и маркетплейсы.</p>
+      <ul class="pc-list">
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Интеграция с 1С, ERP и маркетплейсами</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Сквозная аналитика по всей сети</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>ИИ-прогноз спроса и закупок</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Dashboard Pro — профессиональные дашборды</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Неограниченно складов и пользователей</li>
+        <li><span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Полное проектное внедрение по 7 этапам</li>
+      </ul>
+      <div class="pc-cta"><a href="../Team24 v3.html#contact" class="btn btn-g">Расчёт после консультации</a></div>
+    </div>
+
+  </div>
+  <p class="price-note">Все тарифы включают сопровождение в первый месяц. Лицензии МойСклад оплачиваются отдельно.</p>
+</div></section>
+
+<section class="sec"><div class="container">
+  <h2>Этапы проектного внедрения</h2>
+  <p>Так проходит внедрение тарифа Pro — от первой встречи до поддержки работающей системы.</p>
+  <div class="steps">
+    <div class="step"><div class="num"></div><div class="sct"><h4>Встречи и сбор требований</h4><p>Изучаем ваши процессы, цели и ожидания от системы. Фиксируем задачи и зоны роста.</p></div></div>
+    <div class="step"><div class="num"></div><div class="sct"><h4>Техническое задание</h4><p>Проектируем систему и пишем подробное ТЗ — с понятной логикой и этапами.</p></div></div>
+    <div class="step"><div class="num"></div><div class="sct"><h4>Настройка и разработка</h4><p>Устанавливаем Битрикс24, ведём программную доработку, готовим документацию и инструкции.</p></div></div>
+    <div class="step"><div class="num"></div><div class="sct"><h4>Запуск</h4><p>Тестируем и запускаем Битрикс24 на ваших серверах. Проверяем все сценарии работы.</p></div></div>
+    <div class="step"><div class="num"></div><div class="sct"><h4>Интеграция с системами</h4><p>Подключаем ERP, мессенджеры, соцсети и IP-телефонию. Заявки автоматически попадают в CRM.</p></div></div>
+    <div class="step"><div class="num"></div><div class="sct"><h4>Обучение</h4><p>Обучаем команду работе с Битрикс24 по ролям — на русском и узбекском.</p></div></div>
+    <div class="step"><div class="num"></div><div class="sct"><h4>Техподдержка</h4><p>Сопровождаем, контролируем и повышаем эффективность работы системы.</p></div></div>
+  </div>
+</div></section>
+
+<section class="container"><div class="cta">
+  <h2>Готовы внедрить?</h2>
+  <p>Расскажите о задаче — пришлём план внедрения и фиксированную смету за 24 часа.</p>
+  <a href="../Team24 v3.html#contact" class="btn btn-p">Получить консультацию <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+</div></section>
+
+<section class="container">
+  <a href="powerbi.html" class="nextcase">
+    <div>
+      <div class="nl">Следующая услуга</div>
+      <div class="nt">Power BI — аналитика</div>
+    </div>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+</section>
+<footer class="ftr">© 2026 Team24.uz — Все права защищены.</footer>
+
+<div id="tweaks-root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "cardStyle": "glass",
+  "palette": "blue"
+}/*EDITMODE-END*/;
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  React.useEffect(() => {
+    const g = document.getElementById('price-grid');
+    if (g) g.dataset.cards = t.cardStyle;
+  }, [t.cardStyle]);
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection label="Тарифные карточки" />
+      <TweakRadio
+        label="Стиль карточек"
+        value={t.cardStyle}
+        options={[
+          { value: 'glass', label: 'Стекло' },
+          { value: 'outline', label: 'Контур' },
+          { value: 'spotlight', label: 'Акцент' }
+        ]}
+        onChange={(v) => setTweak('cardStyle', v)}
+      />
+    </TweaksPanel>
+  );
+}
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<App />);
+</script>
+</body>
+</html>
